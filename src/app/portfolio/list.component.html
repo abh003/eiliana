@@ -1,0 +1,49 @@
+﻿<div class="card mb-3 mb-lg-5">
+  <div class="card-header">
+    <h5 class="card-title">Portfolio
+    <a routerLink="add" class="btn btn-primary bg-orange float-right">Add Portfolio</a>
+    </h5>
+  </div>
+  <!-- Body -->
+  <div class="card-body">
+    <div class="card-body" style="min-height: 15rem;">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th style="width: 30%">Title</th>
+                    <th style="width: 30%">Category</th>
+                    <th style="width: 30%">Skill</th>
+                    <th style="width: 30%">Overview</th>
+                    <th style="width: 30%">Price</th>
+                    <th style="width: 30%">Days</th>
+                    <th style="width: 10%"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users">
+                    <td>{{user.firstName}}</td>
+                    <td>{{user.lastName}}</td>
+                    <td>{{user.username}}</td>
+                    <td>{{user.username}}</td>
+                    <td>{{user.username}}</td>
+                    <td>{{user.username}}</td>
+                    <td style="white-space: nowrap">
+                        <a routerLink="edit/{{user.id}}" class="btn btn-sm btn-primary mr-1">Edit</a>
+                        <button (click)="deleteUser(user.id)" class="btn btn-sm btn-danger btn-delete-user" [disabled]="user.isDeleting">
+                            <span *ngIf="user.isDeleting" class="spinner-border spinner-border-sm"></span>
+                            <span *ngIf="!user.isDeleting">Delete</span>
+                        </button>
+                    </td>
+                </tr>
+                <tr *ngIf="!users">
+                    <td colspan="7" class="text-center">
+                        <span class="spinner-border spinner-border-lg align-center"></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+  </div>
+  <!-- End Body -->
+</div>

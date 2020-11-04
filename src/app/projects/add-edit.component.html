@@ -1,0 +1,67 @@
+﻿<div class="card mb-3 mb-lg-5">
+  <div class="card-header">
+    <h5 class="card-title" *ngIf="isAddMode">Add Project</h5>
+    <h5 class="card-title" *ngIf="!isAddMode">Edit Project</h5>
+  </div>
+  <!-- Body -->
+  <div class="card-body">
+    <div class="card-body p-4" style="min-height: 15rem;">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label>Project Name</label>
+                <input type="text" formControlName="first_name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.first_name.errors }" />
+                <div *ngIf="submitted && f.first_name.errors" class="invalid-feedback">
+                    <div *ngIf="f.first_name.errors.required">First Name is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Project Name</label>
+                <input type="text" formControlName="middle_name" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label>Project Name</label>
+                <input type="text" formControlName="last_name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.last_name.errors }" />
+                <div *ngIf="submitted && f.last_name.errors" class="invalid-feedback">
+                    <div *ngIf="f.last_name.errors.required">Last Name is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Project Name</label>
+                <input type="text" formControlName="pseudoName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.pseudoName.errors }" />
+                <div *ngIf="submitted && f.pseudoName.errors" class="invalid-feedback">
+                    <div *ngIf="f.pseudoName.errors.required">Pseudo Name is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="govtID">Project Skills</label>
+                <select formControlName="govtId" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.govtId.errors }" >
+                        <option value="">--Select--</option>
+                        <option value="1">Driving Licence</option>
+                        <option value="2">Aadhar Card</option>
+                        <option value="3">Voter Id Card</option>
+                    </select>
+                <div *ngIf="submitted && f.govtId.errors" class="invalid-feedback">
+                    <div *ngIf="f.govtId.errors.required">Govt. ID Proof id is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Project Days</label>
+                <input type="text" formControlName="idProofNo" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.idProofNo.errors }" />
+                <div *ngIf="submitted && f.idProofNo.errors" class="invalid-feedback">
+                    <div *ngIf="f.idProofNo.errors.required">ID Number Name is required</div>
+                </div>
+            </div>
+            <div class="form-group text-right mt-5 singup-body">
+                <div class="btn-group" role="group">
+                    <button [disabled]="loading" class="btn btn-primary">
+                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                        Next <i class="fa fa-angle-right"></i>
+                    </button>
+                    <button class="btn btn-outline-primary" routerLink="/project">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+  </div>
+  <!-- End Body -->
+</div>

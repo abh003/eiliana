@@ -1,0 +1,73 @@
+﻿<div class="bg-light profile-setting">
+	<div class="bg-navy">
+	  <div class="container p-4">
+	    <div class="align-items-center">
+	        <span class="border-title"></span>
+	        <span class="h3 text-white ml-2"><b>Profile</b> Setting</span>
+	        <!-- <span class="h4 text-white float-right font-weight-light">75% <div class="loader"></div></span> -->
+	    </div>
+	  </div>
+	</div>
+	<div class="container space-1 space-top-lg-0 mt-lg-n10">
+	    <div class="row">
+	        <div class="col-lg-3">
+	            <!-- Navbar -->
+	            <!-- <div class="navbar-expand-lg navbar-expand-lg-collapse-block navbar-light"> collapse -->
+	                <div id="sidebarNav" class="navbar-collapse navbar-vertical " style="">
+	                    <!-- Card -->
+	                    <div class="card mb-5 shadow">
+	                        <div class="card-body">
+	                        	<div class="basic-padding">
+		                        	<div class="form-group basic-info mb-5 text-center">
+				                        <div class="form-check form-check-inline ml-4">
+				                            <div class="custom-control custom-radio">
+				                                <input type="radio" id="mr" name="anonymus" class="custom-control-input" value="1" checked>
+				                                <label class="custom-control-label" for="mr">Avatar</label>
+				                            </div>
+				                        </div>
+				                        <div class="form-check form-check-inline">
+				                            <div class="custom-control custom-radio">
+				                                <input type="radio" id="mrs" name="anonymus" class="custom-control-input" value="2">
+				                                <label class="custom-control-label" for="mrs">Anonymus</label>
+				                            </div>
+				                        </div>
+				                    </div>
+		                            <!-- Avatar -->
+		                            <div class="d-none d-lg-block text-center mb-5">
+		                                <div class="avatar avatar-xxl avatar-circle mb-3">
+		                                    <img class="avatar-img" src="assets/img/profile/avatar_icon.png" alt="Image Description">
+		                                    <span class="border-circle-green"></span>
+		                                </div>
+		                            </div>
+		                            <div class="mb-2">
+		                            	<h5 class="card-title">{{ user.full_name }} <button class="btn btn-white float-right"><i class="fa fa-pencil" aria-hidden="true"></i></button></h5>
+		                                <p class="card-text font-size-1">{{ user.city }} {{ user.country }} - {{ user.created_at  | date:'MMMM d, y, h:mm a'}}</p>
+		                            </div>
+		                        </div>
+	                            <div class="basic-list">
+	                            	<div class="list-group">
+									  	<a class="list-group-item list-group-item-action active" routerLink="/profile">Basic Information</a>
+									  	<a class="list-group-item list-group-item-action" routerLink="/profile">Billing and Payment</a>
+									  	<a class="list-group-item list-group-item-action" routerLink="/profile">Tax Information</a>
+									  	<a class="list-group-item list-group-item-action" routerLink="/profile">Financial Accounts</a>
+									  	<a class="list-group-item list-group-item-action" routerLink="/profile">Membership & Credits</a>
+									  	<a class="list-group-item list-group-item-action" routerLink="/profile">Members (Connections), Teams and Permissions</a>
+									  	<a class="list-group-item list-group-item-action" routerLink="/profile">Membership & Credits</a>
+									  	<a class="list-group-item list-group-item-action" routerLink="/profile">Tax Information</a>
+									  	<a class="list-group-item list-group-item-action" routerLink="/profile">Company Settings</a>
+									</div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <!-- End Card -->
+	                </div>
+	            <!-- </div> -->
+	            <!-- End Navbar -->
+	        </div>
+	        <div class="col-lg-9">
+	            <router-outlet></router-outlet>
+	        </div>
+	    </div>
+	    <!-- End Row -->
+	</div>
+</div>

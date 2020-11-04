@@ -1,0 +1,55 @@
+<div class="bg-navy">
+  <div class="p-4">
+    <div class="align-items-center">
+        <span class="border-title"></span>
+        <span class="h2 text-white ml-2">Change Your Password</span>
+    </div>
+  </div>
+</div>
+<div class="col-md-8 offset-md-2 mt-6 shadow p-0">
+    <div class="singup-body login-body">
+        <div class="container">
+            <div class="row">
+                <div class="col p-0">
+                    <div class="card">
+                        <h4 class="card-header">Change Your Password</h4>
+                        <div class="card-body">
+                            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                                <div class="form-group col">
+                                    <label>Password</label>
+                                    <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                        <div *ngIf="f.password.errors.required">Password is required</div>
+                                        <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                                    </div>
+                                </div>
+                                <div class="form-group col">
+                                    <label>Confirm Password</label>
+                                    <input type="password" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
+                                    <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+                                        <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
+                                        <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
+                                    </div>
+                                </div>
+                                <div class="form-group row justify-content-center mt-3 mb-5">
+                                    <button [disabled]="loading" class="btn btn-primary">
+                                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                                        Change Password
+                                    </button>
+                                    <br />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col p-0 d-flex align-items-center justify-content-center bg-navy">
+                    <div class="account-second-side text-center">
+                        <img src="assets/img/singin.png" class="img-fluid" alt="">
+                        <p class="text-white">Not a member yet?</p>
+                        <a routerLink="../register" class="btn btn-light bt btn-lg">SingUp Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

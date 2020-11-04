@@ -1,0 +1,126 @@
+<div class="bg-navy">
+  <div class="p-4">
+    <div class="align-items-center">
+        <span class="border-title"></span>
+        <span class="h2 text-white ml-2">Basic Info</span>
+    </div>
+  </div>
+</div>
+<div class="col-md-7 offset-md-20 mt-6 shadow p-0">
+    <div class="singup-body login-body">
+        <div class="card">
+            <h4 class="card-header text-left">Basic Info</h4>
+            <div class="card-body">
+                <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                	<!-- <div class="form-group">
+                        <label for="applyas">Apply As</label>
+                         <select formControlName="applyas" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.applyas.errors }" >
+                                <option value="">--Select--</option>
+                                <option value="2">Individual</option>
+                                <option value="3">Company</option>
+                            </select>
+                        <div *ngIf="submitted && f.applyas.errors" class="invalid-feedback">
+                            <div *ngIf="f.applyas.errors.required">Email id is required</div>
+                        </div>
+                    </div> -->
+                    <div class="form-group basic-info">
+                        <label>Title</label>
+                        <div class="form-check form-check-inline ml-3">
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="mr" class="custom-control-input" formControlName="title" value="Mr" checked>
+                                <label class="custom-control-label" for="mr">Mr.</label>
+                            </div>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="mrs" class="custom-control-input" formControlName="title" value="Mrs">
+                                <label class="custom-control-label" for="mrs">Mrs.</label>
+                            </div>
+                        </div>
+                        <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+                            <div *ngIf="f.title.errors.required">Title is required</div>
+                        </div>
+                    </div>
+    	            <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" formControlName="first_name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.first_name.errors }" />
+                        <div *ngIf="submitted && f.first_name.errors" class="invalid-feedback">
+                            <div *ngIf="f.first_name.errors.required">First Name is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Middle Name</label>
+                        <input type="text" formControlName="middle_name" class="form-control"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" formControlName="last_name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.last_name.errors }" />
+                        <div *ngIf="submitted && f.last_name.errors" class="invalid-feedback">
+                            <div *ngIf="f.last_name.errors.required">Last Name is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>DOB</label>
+                        <input type="date" placeholder="DD/MM/YYYY" formControlName="dob" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.dob.errors }" />
+                        <div *ngIf="submitted && f.dob.errors" class="invalid-feedback">
+                            <div *ngIf="f.dob.errors.required">Date of Birth is required</div>
+                            <div *ngIf="f.dob.errors.pattern">Date of Birth must be a valid date in the format YYYY-MM-DD</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Pseudo Name / Alias Name</label>
+                        <input type="text" formControlName="pseudoName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.pseudoName.errors }" />
+                        <div *ngIf="submitted && f.pseudoName.errors" class="invalid-feedback">
+                            <div *ngIf="f.pseudoName.errors.required">Pseudo Name is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="govtID">Govt. ID Proof</label>
+                        <select formControlName="govtId" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.govtId.errors }" >
+                                <option value="">--Select--</option>
+                                <option value="1">Driving Licence</option>
+                                <option value="2">Aadhar Card</option>
+                                <option value="3">Voter Id Card</option>
+                            </select>
+                        <div *ngIf="submitted && f.govtId.errors" class="invalid-feedback">
+                            <div *ngIf="f.govtId.errors.required">Govt. ID Proof id is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Govt. ID Number</label>
+                        <input type="text" formControlName="idProofNo" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.idProofNo.errors }" />
+                        <div *ngIf="submitted && f.idProofNo.errors" class="invalid-feedback">
+                            <div *ngIf="f.idProofNo.errors.required">ID Number Name is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Photo Upload</label>
+                        <div class="custom-file">
+                            <input type="file" id="customFileExample2" name="image" (change)="fileProgress($event)" class="custom-file-input">
+                            <label class="form-control custom-file-label" for="customFileExample2">File Upload</label>
+                        </div>
+                    </div>
+                    <div *ngIf="fileUploadProgress">
+                        Upload progress: {{ fileUploadProgress }}
+                    </div>
+                    <div class="image-preview mb-3" *ngIf="previewUrl">
+                        <img [src]="previewUrl" height="300" />                 
+                    </div>
+         
+                    <div class="mb-3" *ngIf="uploadedFilePath">
+                        {{uploadedFilePath}}
+                    </div>
+                    <div class="form-group text-right mt-5">
+                        <div class="btn-group" role="group">
+                            <button [disabled]="loading" class="btn btn-primary">
+                                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                                Next <i class="fa fa-angle-right"></i>
+                            </button>
+                            <button class="btn btn-outline-primary" type="reset" (click)="onReset()">Discard</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

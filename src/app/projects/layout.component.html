@@ -1,0 +1,45 @@
+﻿<div class="bg-light profile-setting">
+	<div class="bg-navy">
+	  <div class="container p-4">
+	    <div class="align-items-center">
+	        <span class="border-title"></span>
+	        <span class="h3 text-white ml-2">Project</span>
+	    </div>
+	  </div>
+	</div>
+	<div class="container space-1 space-top-lg-0 mt-lg-n10">
+	    <div class="row">
+	        <div class="col-lg-3">
+	        	<!-- Navbar -->
+				<!-- <div class="navbar-expand-lg navbar-expand-lg-collapse-block navbar-light"> collapse -->
+				<div id="sidebarNav" class="navbar-collapse navbar-vertical " style="">
+				  <!-- Card -->
+				  <div class="card mb-5 shadow">
+				    <div class="card-body">
+				      <div class="basic-padding">
+				        <div class="mb-2">
+				          <h5 class="card-title">Welcome back,</h5>
+          					<p>{{ user.full_name }}</p>
+				        </div>
+				      </div>
+				      <div class="basic-list">
+				        <div class="list-group">
+				          <a class="list-group-item list-group-item-action" routerLink="/home">Dashboard</a>
+				          <a class="list-group-item list-group-item-action active" routerLink="/project">My Project</a>
+				          <a class="list-group-item list-group-item-action" routerLink="/portfolio">Portfolio</a>
+				        </div>
+				      </div>
+				    </div>
+				  </div>
+				  <!-- End Card -->
+				</div>
+				<!-- </div> -->
+				<!-- End Navbar -->
+	        </div>
+	        <div class="col-lg-9">
+	            <router-outlet></router-outlet>
+	        </div>
+	    </div>
+	    <!-- End Row -->
+	</div>
+</div>

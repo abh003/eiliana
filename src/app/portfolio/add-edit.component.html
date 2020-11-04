@@ -1,0 +1,57 @@
+﻿<div class="card mb-3 mb-lg-5">
+  <div class="card-header">
+        <h5 class="card-title" *ngIf="isAddMode">Add Portfolio</h5>
+        <h5 class="card-title" *ngIf="!isAddMode">Edit Portfolio</h5>
+  </div>
+  <!-- Body -->
+  <div class="card-body">
+    <div class="card-body p-4" style="min-height: 15rem;">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="form-row">
+                <div class="form-group col">
+                    <label for="firstName">Title</label>
+                    <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                    <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                        <div *ngIf="f.firstName.errors.required">Title is required</div>
+                    </div>
+                </div>
+                <div class="form-group col">
+                    <label for="lastName">Category</label>
+                    <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                    <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                        <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col">
+                    <label for="username">Subcategory</label>
+                    <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                        <div *ngIf="f.username.errors.required">Username is required</div>
+                    </div>
+                </div>
+                <div class="form-group col">
+                    <label for="password">
+                        skill
+                    </label>
+                    <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group text-right mt-5 singup-body">
+                <div class="btn-group" role="group">
+                    <button [disabled]="loading" class="btn btn-primary">
+                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                        Next <i class="fa fa-angle-right"></i>
+                    </button>
+                    <button class="btn btn-outline-primary" routerLink="/portfolio">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+  </div>
+  <!-- End Body -->
+</div>

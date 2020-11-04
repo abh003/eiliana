@@ -1,0 +1,61 @@
+<div class="bg-navy">
+  <div class="p-4">
+    <div class="align-items-center">
+        <span class="border-title"></span>
+        <span class="h2 text-white ml-2">OTP Verification</span>
+    </div>
+  </div>
+</div>
+<div class="col-md-8 offset-md-2 mt-6 shadow p-0">
+    <div class="singup-body login-body register-otp">
+        <div class="container">
+            <div class="row">
+                <div class="col p-0">
+                    <div class="card">
+                        <h4 class="card-header">Otp Verification</h4>
+                        <div class="card-body">
+                            <div class="text-center mb-4">
+                                <img src="assets/img/otp-verif.png" class="img-fluid" alt="">
+                            </div>
+                            <p class="d-flex"><i class="fa fa-arrow-right"></i><span class="text-dark">Please enter the one-time password to verify your account</span></p>
+                            <p class="text-secondary ml-4">A one time password has been send to <b>XXXX</b> and Email <b>XX@gmail.com</b></p>
+                            <form [formGroup]="form" (ngSubmit)="onSubmit()" class="list-form">
+                                <div class="form-group">
+                                    <label for="otp">OTP For Email</label>
+                                    <input type="text" formControlName="otp" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.otp.errors }" />
+                                    <div *ngIf="submitted && f.otp.errors" class="invalid-feedback">
+                                        <div *ngIf="f.otp.errors.required">Email Otp is required</div>
+                                        <div *ngIf="f.otp.errors.minlength">Email Otp must be at least 4 digits</div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="otpm">OTP For Mobile</label>
+                                    <input type="text" formControlName="otpm" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.otpm.errors }" />
+                                    <div *ngIf="submitted && f.otpm.errors" class="invalid-feedback">
+                                        <div *ngIf="f.otpm.errors.required">Mobile Otp is required</div>
+                                        <div *ngIf="f.otpm.errors.minlength">Mobile Otp must be at least 4 digits</div>
+                                    </div>
+                                </div>
+                                <div class="form-group row justify-content-center mt-5 mb-2">
+                                    <button [disabled]="loading" class="btn btn-primary">
+                                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                                        Validate
+                                    </button>
+                                    <a (click)="resendOtp()" class="bt text-blue">Resend One-Time-Password</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col p-0 d-flex align-items-center justify-content-center bg-navy">
+                    <div class="account-second-side text-center">
+                        <img src="assets/img/singin.png" class="img-fluid" alt="">
+                        <p class="text-white">Already have an account?</p>
+                        <a routerLink="../login" class="btn btn-light bt btn-lg">Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>

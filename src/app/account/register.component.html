@@ -1,0 +1,75 @@
+﻿<div class="bg-navy">
+  <div class="p-4">
+    <div class="align-items-center">
+        <span class="border-title"></span>
+        <span class="h2 text-white ml-2">Signup</span>
+    </div>
+  </div>
+</div>
+<div class="col-md-8 offset-md-2 mt-6 shadow p-0">
+    <div class="singup-body login-body">
+         <div class="container">
+            <div class="row">
+                <div class="col p-0">
+                    <div class="card">
+                        <h4 class="card-header">Signup</h4>
+                        <div class="card-body">
+                            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                                <div class="form-group mb-3">
+                                    <label for="username">Phone Number</label>
+                                    <input type="number" formControlName="mobile" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }" />
+                                    <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
+                                        <div *ngIf="f.mobile.errors.required">Phone Number is required</div>
+                                        <div *ngIf="f.mobile.errors.pattern">Phone Number must be at least 10 digits</div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="username">Email ID</label>
+                                    <input type="email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                        <div *ngIf="f.email.errors.required">Email id is required</div>
+                                        <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                                    </div>
+                                </div>
+                                <div class="form-group form-check">
+                                    <input type="checkbox" formControlName="acceptTerms" id="acceptTerms" class="form-check-input" [ngClass]="{ 'is-invalid': submitted && f.acceptTerms.errors }" />
+                                    <label for="acceptTerms" class="form-check-label">I agree to the Eiliana User agreement and privacy policy</label>
+                                    <div *ngIf="submitted && f.acceptTerms.errors" class="invalid-feedback">Accept Ts & Cs is required</div>
+                                </div>
+                                <div class="form-group row justify-content-center mt-4 mb-5">
+                                    <button [disabled]="loading" class="btn btn-primary">
+                                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                                        Continue with OTP
+                                    </button>
+                                    <!-- <br />
+                                    <p>Already have an account? <a routerLink="../login" class="bt">Login</a></p> -->
+                                </div>
+                            </form>
+                            <div class="row omb_row-sm-offset-3 omb_socialButtons">
+                                <div class="col-xs-12 col-sm-12 mb-3">
+                                    <a href="#" class="btn btn-lg btn-block omb_btn-facebook">
+                                        <i class="fa fa-facebook"></i>
+                                        <span>with Facebook</span>
+                                    </a>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 mb-3">
+                                    <a href="#" class="btn btn-lg btn-block omb_btn-google">
+                                        <i class="fa fa-google-plus"></i>
+                                        <span>with Google</span>
+                                    </a>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col p-0 d-flex align-items-center justify-content-center bg-navy">
+                    <div class="account-second-side text-center">
+                        <img src="assets/img/singin.png" class="img-fluid" alt="">
+                        <p class="text-white">Already have an account?</p>
+                        <a routerLink="../login" class="btn btn-light bt btn-lg">Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
