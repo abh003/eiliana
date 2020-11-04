@@ -1,5 +1,5 @@
-# angular-10-registration-login-example
+# eiliana-app
 
-Angular 10 - User Registration and Login Example
+Angular 10 - eiliana innovating work life
 
-To see a demo and further details go to https://jasonwatmore.com/post/2020/07/18/angular-10-user-registration-and-login-example-tutorial
+To see a demo and further details go to https://eiliana.com
