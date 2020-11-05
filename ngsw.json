@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1604581866923,
+  "timestamp": 1604586636336,
   "index": "https://abh003.github.io/eiliana/front-end/index.html",
   "assetGroups": [
     {
@@ -17,12 +17,12 @@
         "https://abh003.github.io/eiliana/7.29545b3a03e72bccf814.js",
         "https://abh003.github.io/eiliana/favicon.ico",
         "https://abh003.github.io/eiliana/index.html",
-        "https://abh003.github.io/eiliana/main.c7d91ac6c46ec9f27f00.js",
+        "https://abh003.github.io/eiliana/main.0919366408e1ba3ccead.js",
         "https://abh003.github.io/eiliana/manifest.webmanifest",
         "https://abh003.github.io/eiliana/polyfills.e36df75b7f32c36e25a5.js",
         "https://abh003.github.io/eiliana/runtime.65aa3b320d91b5c14a86.js",
         "https://abh003.github.io/eiliana/scripts.9fd7b19ec12c5aa42fa3.js",
-        "https://abh003.github.io/eiliana/styles.703585399912d9b9494c.css"
+        "https://abh003.github.io/eiliana/styles.51b88dcc0db9c29fa8b8.css"
       ],
       "patterns": []
     },
@@ -161,7 +161,7 @@
     "https://abh003.github.io/eiliana/assets/img/lnguage_icon.jpg": "9106630c0192b5f61c63b6e6accd2f7d3644fc29",
     "https://abh003.github.io/eiliana/assets/img/logo-footer.png": "19061aadf80daf04bea2ecdfb46e32a348cebd5c",
     "https://abh003.github.io/eiliana/assets/img/logo.png": "8c46c6273f58657f3f9de7fa530b4d5b5ffde1c1",
-    "https://abh003.github.io/eiliana/assets/img/map_image.jpg": "bea4ad588f944d186ee2a9bfe735f1e78ce24db5",
+    "https://abh003.github.io/eiliana/assets/img/map_image.jpg": "ce5dca30a1607c4670b21ede3d93d1bcb17ba53e",
     "https://abh003.github.io/eiliana/assets/img/others/Business-1.png": "878b6b1153576b143a112f463a09d5ab10fb080b",
     "https://abh003.github.io/eiliana/assets/img/others/Business-2.png": "a95a0402d0921da7c4dbcdafa48b7be146f46dc4",
     "https://abh003.github.io/eiliana/assets/img/others/Business-3.png": "317e09018a2e53b2d5e9b1747142df07042bed4b",
@@ -181,8 +181,8 @@
     "https://abh003.github.io/eiliana/assets/img/singin.png": "23feeea79f6a861b6b3d75f54865f3ee41f5dfcf",
     "https://abh003.github.io/eiliana/assets/js/scripts.js": "d36b2bd06f26fa09d85148e4610073c4fc22c1d1",
     "https://abh003.github.io/eiliana/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "https://abh003.github.io/eiliana/index.html": "b07e237fe9ed91c8412f6cff6c8749514a26be47",
-    "https://abh003.github.io/eiliana/main.c7d91ac6c46ec9f27f00.js": "457fd8dd49c949a2aa857aeaaf3e45b07aa9fdcc",
+    "https://abh003.github.io/eiliana/index.html": "e5d30768a9a6bbe89d9a74996db36025989d9e2c",
+    "https://abh003.github.io/eiliana/main.0919366408e1ba3ccead.js": "969effac14380f806398c8d0fc468deceb1256ea",
     "https://abh003.github.io/eiliana/manifest.webmanifest": "a7e5ac7561c75e139352804589326ad2a6567543",
     "https://abh003.github.io/eiliana/polyfills.e36df75b7f32c36e25a5.js": "d26697ff351c6167b63c42331a7593836c540890",
     "https://abh003.github.io/eiliana/runtime.65aa3b320d91b5c14a86.js": "6f1714ca5b9fa8fc05b47219f6ab936c10d41649",
@@ -191,7 +191,7 @@
     "https://abh003.github.io/eiliana/slick.295183786cd8a1389865.woff": "af91c12f0f406a4f801aeb3b398768fe41d8f864",
     "https://abh003.github.io/eiliana/slick.a4e97f5a2a64f0ab1323.eot": "2dff0768f4c0a53228761eab917e2c65556042d4",
     "https://abh003.github.io/eiliana/slick.c94f7671dcc99dce43e2.ttf": "3331eebdd4ba348ef25abe00c39ffbe867d46575",
-    "https://abh003.github.io/eiliana/styles.703585399912d9b9494c.css": "7330d8e5322093549527e369434b0150c51f8e72"
+    "https://abh003.github.io/eiliana/styles.51b88dcc0db9c29fa8b8.css": "8f29354dfd47b13d27411eb19451b8ce3f20ba0e"
   },
   "navigationUrls": [
     {
