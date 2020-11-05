@@ -16,10 +16,10 @@ body {
   font-family: 'Montserrat' !important;
 }
 .container {
-    max-width: 1300px !important;
+    max-width: 1160px !important;
 }
 .text-orange {
-    color: #ff6e07!important;
+    color: #b8180c!important;
 }
 .text-blue {
     color: #5259de!important;
@@ -28,24 +28,24 @@ body {
     background: #7e20fd;
 }
 .bg-orange {
-    background: #ff6e07 !important;
+    background: #b8180c !important;
     color: #fff !important;
-    border-color: #ff6e07;
+    border-color: #b8180c;
 }
 a.bg-orange:hover {
-  color: #ff6e07 !important;
+  color: #b8180c !important;
   background-color: #fff !important;
-  border-color: #ff6e07;
+  border-color: #b8180c;
 }
 a:hover {
-    color: #ff6e07 !important;
+    color: #b8180c !important;
     text-decoration: none !important;
 }
 .mt-6, .my-6 {
     margin-top: 6rem!important;
 }
 .custom-control-input:checked~.custom-control-label::before {
-    border-color: #ff6e07 !important;
+    border-color: #b8180c !important;
     background-color: #FF6E08 !important;
 }
 .offset-md-20 {
@@ -53,6 +53,9 @@ a:hover {
 }
 .z-index-2 {
     z-index: 2;
+}
+.p-25 {
+  padding: 2.5rem!important;
 }
 .space-1, .space-bottom-1 {
     padding-bottom: 2rem !important;
@@ -140,12 +143,26 @@ a:hover {
 .card-title {
     margin-bottom: 0;
 }
+.red-linear-gradient {
+  background-color: #3f0d12; 
+  background-image: linear-gradient(#ec201f 0%, #b6180d 74%);
+}
+.yellow-linear-gradient {
+    background: linear-gradient(to bottom, #ffa604 0%, #ff791e 100%);
+}
 /* haeder */
 .custom_header .nav-link {
     color: #000 !important;
+    padding-right: 1rem !important;
+    padding-left: 1rem !important;
+    font-weight: bold;
 }
 .custom_header a.navbar-brand img {
   width: 162px !important;
+}
+.custom_header li.nav-item img {
+    margin-top: 10px;
+    margin-left: 20px;
 }
 .border-radius-l-t-r-b {
     border-radius: 55px 0px 55px 0px;
@@ -159,7 +176,7 @@ a:hover {
 
 }
 .custom_header ul div input {
-  border: 1px solid #ff6e07;
+  border: 1px solid #b8180c;
   border-radius: 50px;
   width: 397px !important;
   height: 42px;
@@ -172,7 +189,7 @@ a:hover {
 }
 
 .custom_header ul div button {
-  border: 1px solid #ff6e07;
+  border: 1px solid #b8180c;
   border-radius: 50px;
   width: 270px !important;
   height: 42px;
@@ -192,16 +209,17 @@ a:hover {
 }
 
 .login_signup {
-  border: 1px solid #ff6e07;
-  border-radius: 50px;
-  padding: 0 30px;
-  height: 42px;
-  line-height: 38px;
-  background: transparent;
-  color: #ff6e07;
-  font-weight: 600;
-  font-size: 16px;
-  box-shadow: 0 0 7px 0px #d8d8d8;
+    border: 1px solid #b8180c;
+    border-radius: 50px;
+    padding: 0 30px;
+    height: 41px;
+    line-height: 37px;
+    background: transparent;
+    color: #b8180c;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 16px;
+    box-shadow: 0 0 7px 0px #d8d8d8;
 }
 
 /*footer*/
@@ -262,7 +280,7 @@ footer {
     font-size: 13px;
 }
 .singup-body .btn.btn-primary {
-    border: 1px solid #ff6e07;
+    border: 1px solid #b8180c;
     border-radius: 0px;
     padding: 0px;
     height: 46px;
@@ -310,11 +328,11 @@ footer {
     border-bottom: 0.0625rem solid #595959;
 }
 .link-underline:hover {
-    border-color: #ff6e07;
+    border-color: #b8180c;
 }
 .explore-more {
-    border-bottom-left-radius: 50px !important;
-    border-top-right-radius: 50px !important;
+    /*border-bottom-left-radius: 50px !important;*/
+    /*border-top-right-radius: 50px !important;*/
 }
 .explore-more li {
   margin: 3px;
@@ -445,11 +463,11 @@ span.border-title {
     background: #f8f9fa;
 }
 .login_signup:hover {
-    background: #ff6e07;
+    background: #b8180c;
     color: #fff !important;
 }
 .login_signup.bg-orange:hover {
-    color: #ff6e07 !important;
+    color: #b8180c !important;
     background: white !important;
 }
 .custome-footer .space-top-2 {
@@ -507,11 +525,30 @@ span.border-title {
   background-color: transparent;
   color: #000;
   border-color: #00000020;
-  border-left: 5px solid #ff6e07;
+  border-left: 5px solid #b8180c;
 }
 .profile-setting .card-body {
     padding: 0;
 }
 .profile-setting .basic-padding {
     padding: 1.25rem;
+}
+/*arrow*/
+span.fa.slick-arrow {
+    position: absolute;
+    top: 44%;
+    background: #fff;
+    padding: 9px 14px;
+    z-index: 9999;
+    height: 35px;
+    box-shadow: 0 0 7px 0px #d8d8d8;
+    width: 35px;
+    cursor: pointer;
+}
+span.fa.fa-angle-left.slick-arrow {
+    left: -25px;
+}
+
+span.fa.fa-angle-right.slick-arrow {
+    right: -30px;
 }
