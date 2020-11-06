@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1604665385638,
+  "timestamp": 1604666381516,
   "index": "./front-end/index.html",
   "assetGroups": [
     {
@@ -181,7 +181,7 @@
     "./assets/img/singin.png": "23feeea79f6a861b6b3d75f54865f3ee41f5dfcf",
     "./assets/js/scripts.js": "d36b2bd06f26fa09d85148e4610073c4fc22c1d1",
     "./favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "./index.html": "c568061118859c54e6937273d7f442fdbadbba04",
+    "./index.html": "a90baf009cd8f85f4e330f15fb295c4915b1cb19",
     "./main.6cd3f45644a25144da4b.js": "50743f9ad60653e465e8ce1a44e3877105235d50",
     "./manifest.webmanifest": "a7e5ac7561c75e139352804589326ad2a6567543",
     "./polyfills.e36df75b7f32c36e25a5.js": "d26697ff351c6167b63c42331a7593836c540890",
