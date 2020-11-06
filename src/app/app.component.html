@@ -20,16 +20,22 @@
                     <button class="login_signup" routerLink="/home" *ngIf="!user">Login</button>
                 </li>
                 <li class="nav-item">
-                    <button class="login_signup bg-orange ml-3" routerLink="account/register" *ngIf="!user">Sign Up</button>
-                </li>
-                <li class="nav-item">
-                    <img src="assets/img/lnguage_icon.jpg" *ngIf="!user">
+                    <button class="login_signup red-linear-gradient text-white ml-3" routerLink="account/register" *ngIf="!user">Sign Up</button>
                 </li>
                 <li class="nav-item">
                     <button class="login_signup" routerLink="/profile" *ngIf="user">{{ user.first_name }}</button>
                 </li>
                 <li class="nav-item">
-                    <button class="login_signup bg-orange ml-3" (click)="logout()" *ngIf="user">Logout</button>
+                    <button class="login_signup red-linear-gradient text-white ml-3" (click)="logout()" *ngIf="user">Logout</button>
+                </li>
+                <li class="nav-item dropdown language" *ngIf="!user">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="assets/img/lnguage_icon.jpg">
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#"><img src="assets/img/lnguage_icon.jpg"></a>
+                        <a class="dropdown-item" href="#"><img src="assets/img/lnguage_icon.jpg"></a>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -59,8 +65,8 @@
   </div>
 </ng-template>
 <footer class="custome-footer">
-    <div class="p-4">
-        <div class="space-top-2 space-bottom-1 space-bottom-lg-2">
+    <div class="container">
+        <div class="space-top-1 space-bottom-1 space-bottom-lg-2">
             <div class="row justify-content-lg-between">
                 <div class="col-6 col-md-4 col-lg mb-5 mb-lg-0">
                     <h5 class="text-dark">Categories</h5>
@@ -115,50 +121,53 @@
         </div>
         <!-- <hr class="opacity-xs my-0"> -->
     </div>
-    <div class="space-1 bg-dark">
-        <div class="row align-items-md-center mb-7 px-4 py-3">
-            <div class="col-md-2 mb-4 mb-md-0">
-               <div class="mb-2">
-                    <a href="#" aria-label="Front">
-                        <img class="brand" src="assets/img/logo-footer.png" alt="Logo">
-                    </a>
-                    
+    <div class="bg-dark">
+        <div class="container">    
+            <div class="row align-items-md-center mb-7 px-4 py-3">
+                <div class="col-md-2 mb-4 mb-md-0">
+                   <div class="mb-2">
+                        <a href="#" aria-label="Front">
+                            <img class="brand img-fluid" src="assets/img/logo-footer.png" alt="Logo">
+                        </a>
+                        
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-2 mb-4 mb-md-0">
-                <span class="country text-white">India</span>
-                <span class="rupees-currency text-white ml-3">₹INR</span>
-            </div>
-            <div class="col-md-4 mb-4 mb-md-0">
-                <div class="w-md-75 text-lg-center mx-lg-auto">
-                    <p class="text-white opacity-sm small">© Eiliana International Ltd. 2020</p>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <span class="country"><img src="assets/img/lnguage_icon.jpg"></span>
+                    <!-- <span class="country text-white">India</span> -->
+                    <!-- <span class="rupees-currency text-white ml-3">₹INR</span> -->
                 </div>
-            </div>
-            <div class="col-md-4 text-md-right">
-                <ul class="list-inline mb-0">
-                    <!-- Social Networks -->
-                    <li class="list-inline-item">
-                        <a class="btn btn-xs btn-icon btn-ghost-light" href="#">
-                            <i class="fa fa-facebook-f"></i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="btn btn-xs btn-icon btn-ghost-light" href="#">
-                            <i class="fa fa-twitter"></i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="btn btn-xs btn-icon btn-ghost-light" href="#">
-                            <i class="fa fa-linkedin"></i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="btn btn-xs btn-icon btn-ghost-light" href="#">
-                            <i class="fa fa-instagram"></i>
-                        </a>
-                    </li>
-                    <!-- End Social Networks -->
-                </ul>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <div class="w-md-75 text-lg-center mx-lg-auto">
+                        <p class="text-dark opacity-sm small">© Eiliana International Ltd. 2020</p>
+                    </div>
+                </div>
+                <div class="col-md-4 text-md-right">
+                    <ul class="list-inline mb-0">
+                        <!-- Social Networks -->
+                        <li class="list-inline-item">
+                            <a class="btn btn-xs btn-icon btn-ghost-dark" href="#">
+                                <i class="fa fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="btn btn-xs btn-icon btn-ghost-dark" href="#">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="btn btn-xs btn-icon btn-ghost-dark" href="#">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="btn btn-xs btn-icon btn-ghost-dark" href="#">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </li>
+                        <!-- End Social Networks -->
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

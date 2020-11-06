@@ -32,6 +32,11 @@ body {
     color: #fff !important;
     border-color: #b8180c;
 }
+.bg-yellow {
+    background: #fba802 !important;
+    color: #fff !important;
+    border-color: #fba802;
+}
 a.bg-orange:hover {
   color: #b8180c !important;
   background-color: #fff !important;
@@ -145,24 +150,40 @@ a:hover {
 }
 .red-linear-gradient {
   background-color: #3f0d12; 
-  background-image: linear-gradient(#ec201f 0%, #b6180d 74%);
+  background-image: linear-gradient(#ec201f 0%, #b6180d 74%) !important;
 }
 .yellow-linear-gradient {
-    background: linear-gradient(to bottom, #ffa604 0%, #ff791e 100%);
+    background: linear-gradient(to bottom, #ffa604 0%, #ff791e 100%) !important;
+}
+.font-weight-500 {
+    font-weight: 500;
+}
+.font-weight-700 {
+    font-weight: 700;
+}
+.font-weight-800 {
+    font-weight: 700;
 }
 /* haeder */
 .custom_header .nav-link {
     color: #000 !important;
     padding-right: 1rem !important;
     padding-left: 1rem !important;
-    font-weight: bold;
+    font-weight: 800;
 }
 .custom_header a.navbar-brand img {
   width: 162px !important;
 }
 .custom_header li.nav-item img {
-    margin-top: 10px;
-    margin-left: 20px;
+    /*margin-top: 10px;*/
+    /*margin-left: 20px;*/
+}
+.language ul li a#navbarDropdown {
+    padding: 7px 16px;
+}
+.language .dropdown-menu.show {
+    left: -108px;
+    text-align: center;
 }
 .border-radius-l-t-r-b {
     border-radius: 55px 0px 55px 0px;
@@ -211,7 +232,7 @@ a:hover {
 .login_signup {
     border: 1px solid #b8180c;
     border-radius: 50px;
-    padding: 0 30px;
+    padding: 0 37px;
     height: 41px;
     line-height: 37px;
     background: transparent;
@@ -219,7 +240,7 @@ a:hover {
     text-transform: uppercase;
     font-weight: 700;
     font-size: 16px;
-    box-shadow: 0 0 7px 0px #d8d8d8;
+    /* box-shadow: 0 0 7px 0px #d8d8d8;*/
 }
 
 /*footer*/
@@ -258,8 +279,8 @@ footer {
 .singup-body .card-body {
     background: #fff;
     padding: 35px;
-    /* border-left: 1px solid #ff7421; */
-    /* border-right: 1px solid #ff7421; */
+    /* border-left: 1px solid #b8180c; */
+    /* border-right: 1px solid #b8180c; */
 }
 .singup-body span.input-group-text {
     background: none;
@@ -285,7 +306,7 @@ footer {
     padding: 0px;
     height: 46px;
     line-height: 44px;
-    background: #ff7421;
+    background: #b8180c;
     color: #ffffff;
     font-weight: 400;
     font-size: 16px;
@@ -346,21 +367,24 @@ footer {
 }
 
 .our-slotuion h3 {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
 }
 .our-slotuion p {
-    font-size: 16px;
+    font-size: 13px;
     padding: 12px;
     text-align: center;
-    min-height: 160px;
+    min-height: 120px;
 }
 .our-slotuion a.btn {
-    color: #ff7421;
-    border-color: #ff7421;
+    color: #b8180c;
+    /* border-color: #b8180c; */
     border-radius: 22px;
-    padding: 10px 20px;
+    padding: 5px 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 15px;
 }
 .our-slotuion a.btn:hover {
     background: none;
@@ -374,13 +398,24 @@ footer {
 }
 .newsletter .input-group button {
   border-radius: 33px !important;
-  width: 230px;background: #ffa705;
-  border-color: #ffa705;
+  width: 230px;
+  /*background: #cd1b14;*/
+  border-color: #cd1b14;
   position: relative;
   left: -25px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 20px;
+
+}
+.newsletter h2 {
+    font-size: 2rem;
+}
+.newsletter p {
+    font-size: 14px;
 }
 .video-player a.js-inline-video-player img {
-  border: 1px solid #ff7421;
+  border: 1px solid #b8180c;
   padding: 15px;
 }
 .register-otp .card-footer p {
@@ -452,8 +487,8 @@ span.border-title {
     margin-left: 18px !important;
 }
 .singup-body .btn-group button.btn.btn-outline-primary {
-    color: #ff7421;
-    border-color: #ff7421;
+    color: #b8180c;
+    border-color: #b8180c;
     border-radius: unset !important;
 }
 .singup-body .btn-group .btn i.fa {
@@ -482,9 +517,9 @@ span.border-title {
 .custome-footer a.nav-link {
     font-size: 14px;
     padding: 6px;
-    font-weight: 500;
+    font-weight: 600;
 }
-.custome-footer p.text-white {
+.custome-footer p.text-dark {
     font-size: 16px;
     font-weight: 600;
     margin: 0;
@@ -551,4 +586,7 @@ span.fa.fa-angle-left.slick-arrow {
 
 span.fa.fa-angle-right.slick-arrow {
     right: -30px;
+}
+.custome-footer .bg-dark {
+  background-color: #868485 !important;
 }
