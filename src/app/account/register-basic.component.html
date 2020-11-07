@@ -1,18 +1,18 @@
-<div class="bg-navy">
-  <div class="p-4">
+<div class="bg-red">
+  <div class="px-4 py-3">
     <div class="align-items-center">
-        <span class="border-title"></span>
-        <span class="h2 text-white ml-2">Basic Info</span>
+        <span class="border-title"><i class="fa fa-bars"></i></span>
+        <span class="h4 text-white ml-2">Account Registration</span>
     </div>
   </div>
 </div>
-<div class="col-md-7 offset-md-20 mt-6 shadow p-0">
+<div class="col-md-7 offset-md-20 mt-6 shadow p-0 registration-basic">
     <div class="singup-body login-body">
         <div class="card">
             <h4 class="card-header text-left">Basic Info</h4>
             <div class="card-body">
                 <form [formGroup]="form" (ngSubmit)="onSubmit()">
-                	<!-- <div class="form-group">
+                	<div class="form-group">
                         <label for="applyas">Apply As</label>
                          <select formControlName="applyas" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.applyas.errors }" >
                                 <option value="">--Select--</option>
@@ -22,7 +22,7 @@
                         <div *ngIf="submitted && f.applyas.errors" class="invalid-feedback">
                             <div *ngIf="f.applyas.errors.required">Email id is required</div>
                         </div>
-                    </div> -->
+                    </div>
                     <div class="form-group basic-info">
                         <label>Title</label>
                         <div class="form-check form-check-inline ml-3">
@@ -93,13 +93,13 @@
                             <div *ngIf="f.idProofNo.errors.required">ID Number Name is required</div>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label>Photo Upload</label>
                         <div class="custom-file">
                             <input type="file" id="customFileExample2" name="image" (change)="fileProgress($event)" class="custom-file-input">
                             <label class="form-control custom-file-label" for="customFileExample2">File Upload</label>
                         </div>
-                    </div>
+                    </div> -->
                     <div *ngIf="fileUploadProgress">
                         Upload progress: {{ fileUploadProgress }}
                     </div>

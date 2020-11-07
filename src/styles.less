@@ -27,6 +27,9 @@ body {
 .bg-navy {
     background: #7e20fd;
 }
+.bg-red {
+  background: #de4b39;
+}
 .bg-orange {
     background: #b8180c !important;
     color: #fff !important;
@@ -60,7 +63,7 @@ a:hover {
     z-index: 2;
 }
 .p-25 {
-  padding: 2.5rem!important;
+  padding: 2rem!important;
 }
 .space-1, .space-bottom-1 {
     padding-bottom: 2rem !important;
@@ -79,6 +82,12 @@ a:hover {
 }
 .space-3, .space-top-3 {
     padding-top: 8rem !important;
+}
+.space-lg-3, .space-bottom-lg-3 {
+    padding-bottom: 5rem !important;
+}
+.space-lg-3, .space-top-lg-3 {
+    padding-top: 5rem !important;
 }
 .w-lg-60 {
     width: 60% !important;
@@ -107,7 +116,7 @@ a:hover {
   border-color: #dc3545 !important;
   color: #dc3545 !important;
 }
-.slick-slide {
+.four-slider .slick-slide {
   margin: 0 15px;
 }
 .modal-dialog {
@@ -163,6 +172,9 @@ a:hover {
 }
 .font-weight-800 {
     font-weight: 700;
+}
+.offset-md-1 {
+  margin-left: 13%;
 }
 /* haeder */
 .custom_header .nav-link {
@@ -259,7 +271,14 @@ footer {
     background: transparent !important;
     border: none !important;
 }
-
+.login-body {
+    border: 1px solid #a3a3a3;
+}
+.login-body label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #595959;
+}
 .singup-body .card {
     background: none;
     border: 0px solid #e5e5e5;
@@ -288,25 +307,25 @@ footer {
     padding: 12px 15px;
 }
 
-.singup-body input.form-control {
+/*.singup-body input.form-control {
     border-left: none;
     border-radius: 19px;
     padding: 20px 0px 20px;
     font-size: 12px;
     border-top-right-radius: 20px !important;
     border-bottom-right-radius: 20px !important;
-}
+}*/
 .singup-body .form-group.form-check {
-    padding: 8px 25px;
+    padding: 8px 8px 8px 20px;
     font-size: 13px;
 }
 .singup-body .btn.btn-primary {
-    border: 1px solid #b8180c;
+    border: 1px solid #6b39f2;
     border-radius: 0px;
     padding: 0px;
     height: 46px;
     line-height: 44px;
-    background: #b8180c;
+    background: #6b39f2;
     color: #ffffff;
     font-weight: 400;
     font-size: 16px;
@@ -429,7 +448,7 @@ footer {
     color: #5259de;
 }
 .register-otp .card-body p {
-    font-size: 16px;
+    font-size: 17px;
 }
 
 .register-otp .card-body p i {
@@ -438,32 +457,35 @@ footer {
 }
 
 .login-body input.form-control {
-    border-left: 1px solid #ced4da;
     border-radius: 0;
     padding: 20px 20px 20px;
     font-size: 12px;
-    border-top-right-radius: 0px !important;
-    border-bottom-right-radius: 0px !important;
-    background-color: #f8f9fa;
+    border: none;
+    background-color: #fff;
+    border-bottom: 1px solid #c7c7c7;
 }
-span.border-title {
-    border: 1px solid white;
-    height: 9px;
-    width: 35px;
-    background: white;
-    display: inline-block;
-    border-radius: 5px;
+span.border-title i {
+        /* border: 1px solid white; */
+    /* height: 9px; */
+    /* width: 35px; */
+    /* background: white; */
+    /* display: inline-block; */
+    /* border-radius: 5px; */
     position: relative;
-    top: -6px;
+    top: -2px;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 400;
 }
 .account-page {
     padding-bottom: 85px;
 }
 .singup-body .form-group p a.bt {
-    text-decoration: underline;
+  text-decoration: underline;
+  color: #da4c38;
 }
 .account-second-side img {
-    margin-bottom: 60px;
+    margin-bottom: 30px;
 }
 
 .account-second-side p {
@@ -517,7 +539,7 @@ span.border-title {
 .custome-footer a.nav-link {
     font-size: 14px;
     padding: 6px;
-    font-weight: 600;
+    /*font-weight: 600;*/
 }
 .custome-footer p.text-dark {
     font-size: 16px;
@@ -589,4 +611,31 @@ span.fa.fa-angle-right.slick-arrow {
 }
 .custome-footer .bg-dark {
   background-color: #868485 !important;
+}
+.registration-basic .singup-body.login-body {
+  border: 1px solid #0053c3;
+}
+.registration-basic .card-header {
+    background-color: #0053c3;
+    color: #fff;
+    font-size: 22px;
+    padding: 1.5rem 1.5rem;
+}
+footer.custome-footer {
+    background: #0d223f;
+}
+.facebook {
+    background-color: #3B5998 !important;
+}
+
+.twitter {
+    background-color: #55ACEE !important;
+}
+
+.linkedin {
+    background-color: #007bb5 !important;
+}
+
+.instagram {
+    background-color: #bb0000 !important;
 }
