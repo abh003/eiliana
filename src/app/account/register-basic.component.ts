@@ -5,6 +5,7 @@ import { first } from 'rxjs/operators';
 
 import { AccountService, AlertService } from '@app/_services';
 import { LoginComponent } from './login.component';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 @Component({
   selector: 'app-register-basic',
@@ -26,6 +27,13 @@ export class RegisterBasicComponent implements OnInit {
 	fileUploadProgress: string = null;
 	uploadedFilePath: string = null;
 
+    countries = null;
+
+    public publicAnonymus;
+    public anonymousShow: boolean = true;
+    public companyShow: boolean = false;
+    public titleDefault = 0;
+
   	constructor(
   		private formBuilder: FormBuilder,
     	private route: ActivatedRoute,
@@ -39,20 +47,27 @@ export class RegisterBasicComponent implements OnInit {
     }
 
   	ngOnInit() {
+        
+        this.accountService.getAllCountry().subscribe(res => {
+            this.countries = res;
+        });
         this.form = this.formBuilder.group({
         	registration_id: this.registration_id,
         	username: this.username,
         	password: this.password,
         	password_confirm: this.password,
-            applyas: ['2'],
+            applyas: ['', [Validators.required]],
             title: ['', [Validators.required]],
+            anonymous: ['', [Validators.required]],
+            company_name: [null],
             first_name: ['', [Validators.required]],
-            middle_name: [''],
+            middle_name: [null],
             last_name: ['', [Validators.required]],
             dob: ['', [Validators.required, Validators.pattern(/^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/)]],
-            pseudoName: ['', [Validators.required]],
-            govtId: ['', [Validators.required]],
-            idProofNo: ['', [Validators.required]]
+            pseudoName: [null],
+            country: ['', [Validators.required]],
+            govtID: [null],
+            idProofNo: [null]
         });
     }
 
@@ -98,15 +113,34 @@ export class RegisterBasicComponent implements OnInit {
                 this.userDatas = response;
                 if (this.userDatas.success == '0') {
                     this.alertService.error(this.userDatas.errors);
+                    Swal.fire({
+                      icon: 'error',
+                      title: 'Oops...',
+                      text: this.userDatas.errors,
+                      showConfirmButton: false,
+                      timer: 2000
+                    })
                     this.loading = false;
                 } else {
                     this.alertService.success('Account sucessfully created, Login credentials send to your email!', { keepAfterRouteChange: true });
                     localStorage.removeItem('reg_id')
                     // localStorage.setItem("reg_id", this.userDatas.reg_id);
+                    Swal.fire({
+                      icon: 'success',
+                      title: 'Success...',
+                      text: 'Account sucessfully created, Login credentials send to your email!',
+                    })
                     this.router.navigate(['../login'], { relativeTo: this.route });
                 }
             }, (data) => {
                 this.alertService.error('General error has occurred');
+                Swal.fire({
+                  icon: 'error',
+                  title: 'Oops...',
+                  text: 'Something went wrong!',
+                  showConfirmButton: false,
+                  timer: 2000
+                })
                 this.loading = false;
         });
     }
@@ -114,5 +148,24 @@ export class RegisterBasicComponent implements OnInit {
     onReset() {
         this.submitted = false;
         this.form.reset();
+    }
+
+    changeAnonymus(e) {
+        this.publicAnonymus = e.target.value;
+        // console.log(this.publicAnonymus);
+        if (this.publicAnonymus == '1') {
+            this.anonymousShow = true;
+        } else {
+            this.anonymousShow = false;
+        }
+    }
+
+    changeCompnay(e){
+        let value = e.target.value;
+        if (value == 2) {
+            this.companyShow = false;
+        } else {
+            this.companyShow = true;
+        }
     }
 }

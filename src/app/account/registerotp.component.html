@@ -1,12 +1,12 @@
 <div class="bg-red">
-  <div class="px-4 py-3">
+  <div class="px-5 py-2">
     <div class="align-items-center">
         <span class="border-title"><i class="fa fa-bars"></i></span>
-        <span class="h4 text-white ml-2">OTP Verification</span>
+        <span class="h5 text-white ml-2">OTP Verification</span>
     </div>
   </div>
 </div>
-<div class="col-md-9 offset-md-1 mt-6 shadow p-0 login-body">
+<div class="col-md-8 offset-md-2 mt-6 shadow p-0 login-body">
     <div class="singup-body register-otp">
         <div class="container">
             <div class="row">
@@ -18,7 +18,7 @@
                                 <img src="assets/img/otp-verif.png" class="img-fluid" alt="">
                             </div>
                             <p class="d-flex"><i class="fa fa-arrow-right"></i><span class="text-dark">Please enter the one-time password to verify your account</span></p>
-                            <p class="text-secondary ml-4">A one time password has been send to <b>XXXX</b> and Email <b>XX@gmail.com</b></p>
+                            <p class="text-secondary ml-4">A one time password has been send to <b>{{ mobile_otp }}</b> and Email <b>{{ email_otp }}</b></p>
                             <form [formGroup]="form" (ngSubmit)="onSubmit()" class="list-form">
                                 <div class="form-group">
                                     <label for="otp">OTP For Email</label>

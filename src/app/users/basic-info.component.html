@@ -1,6 +1,6 @@
-﻿<div class="singup-body login-body">
+﻿<div class="singup-body login-body profile-basic">
     <div class="card">
-        <h4 class="card-header text-left">Basic Info</h4>
+        <h4 class="card-header text-left">Basic Information</h4>
         <div class="card-body p-4">
             <form [formGroup]="form" (ngSubmit)="onSubmit()">
                 <!-- <div class="form-group">
@@ -14,6 +14,13 @@
                         <div *ngIf="f.applyas.errors.required">Email id is required</div>
                     </div>
                 </div> -->
+                 <div class="form-group">
+                        <label>User Id</label>
+                        <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                            <div *ngIf="f.username.errors.required">User Id is required</div>
+                        </div>
+                    </div>
                 <div class="form-group basic-info">
                     <label>Title</label>
                     <div class="form-check form-check-inline ml-3">
@@ -39,10 +46,10 @@
                         <div *ngIf="f.first_name.errors.required">First Name is required</div>
                     </div>
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label>Middle Name</label>
                     <input type="text" formControlName="middle_name" class="form-control"/>
-                </div>
+                </div> -->
                 <div class="form-group">
                     <label>Last Name</label>
                     <input type="text" formControlName="last_name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.last_name.errors }" />
@@ -59,7 +66,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>Pseudo Name / Alias Name</label>
+                    <label>Alias</label>
                     <input type="text" formControlName="pseudoName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.pseudoName.errors }" />
                     <div *ngIf="submitted && f.pseudoName.errors" class="invalid-feedback">
                         <div *ngIf="f.pseudoName.errors.required">Pseudo Name is required</div>
@@ -67,14 +74,14 @@
                 </div>
                 <div class="form-group">
                     <label for="govtID">Govt. ID Proof</label>
-                    <select formControlName="govtId" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.govtId.errors }" >
+                    <select formControlName="govtID" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.govtID.errors }" >
                             <option value="">--Select--</option>
-                            <option value="1">Driving Licence</option>
-                            <option value="2">Aadhar Card</option>
-                            <option value="3">Voter Id Card</option>
+                            <option *ngFor="let govtID of govtIDs; let i = index" [value]="govtIDs[i].id">
+                              {{govtIDs[i].name}}
+                            </option>
                         </select>
-                    <div *ngIf="submitted && f.govtId.errors" class="invalid-feedback">
-                        <div *ngIf="f.govtId.errors.required">Govt. ID Proof id is required</div>
+                    <div *ngIf="submitted && f.govtID.errors" class="invalid-feedback">
+                        <div *ngIf="f.govtID.errors.required">Govt. ID Proof id is required</div>
                     </div>
                 </div>
                 <div class="form-group">
@@ -84,28 +91,21 @@
                         <div *ngIf="f.idProofNo.errors.required">ID Number Name is required</div>
                     </div>
                 </div>
-                <!-- <div class="form-group">
-                    <label>Photo Upload</label>
-                    <div class="custom-file">
-                        <input type="file" id="customFileExample2" name="image" (change)="fileProgress($event)" class="custom-file-input">
-                        <label class="form-control custom-file-label" for="customFileExample2">File Upload</label>
+                <div class="form-group">
+                    <label for="country">Country</label>
+                    <select formControlName="country" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.country.errors }" >
+                        <option value="">--Select--</option>
+                        <option value="{{ country.id }}" *ngFor="let country of countries">{{ country.name }}</option>
+                    </select>
+                    <div *ngIf="submitted && f.country.errors" class="invalid-feedback">
+                        <div *ngIf="f.country.errors.required">Country is required</div>
                     </div>
                 </div>
-                <div *ngIf="fileUploadProgress">
-                    Upload progress: {{ fileUploadProgress }}
-                </div>
-                <div class="image-preview mb-3" *ngIf="previewUrl">
-                    <img [src]="previewUrl" height="300" />                 
-                </div>
-     
-                <div class="mb-3" *ngIf="uploadedFilePath">
-                    {{uploadedFilePath}}
-                </div> -->
                 <div class="form-group text-right mt-5">
                     <div class="btn-group" role="group">
                         <button [disabled]="loading" class="btn btn-primary">
                             <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
-                            Next <i class="fa fa-angle-right"></i>
+                            Save Details
                         </button>
                         <button class="btn btn-outline-primary" type="reset">Discard</button>
                     </div>

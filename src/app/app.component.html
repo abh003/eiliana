@@ -1,7 +1,6 @@
-﻿<section class="section p-25">
-    <nav class="navbar navbar-expand-lg navbar-light custom_header">
-        <a class="navbar-brand" routerLink="/" *ngIf="!user"><img src="assets/img/logo.png"></a>
-        <a class="navbar-brand" routerLink="/home" *ngIf="user"><img src="assets/img/logo.png"></a>
+﻿<section class="section px-5 py-2">
+    <nav class="navbar navbar-expand-lg navbar-light custom_header" *ngIf="!user">
+        <a class="navbar-brand" routerLink="/"><img src="assets/img/logo.png"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -17,27 +16,57 @@
                     <a class="nav-link" href="#">Our Products</a>
                 </li>
                 <li class="nav-item">
-                    <button class="login_signup" routerLink="/home" *ngIf="!user">Login</button>
+                    <button class="login_signup yellow-linear-gradient text-white" routerLink="/home">Login</button>
                 </li>
                 <li class="nav-item">
-                    <button class="login_signup red-linear-gradient text-white ml-3" routerLink="account/register" *ngIf="!user">Sign Up</button>
+                    <button class="login_signup red-linear-gradient text-white ml-3" routerLink="account/register">Sign Up</button>
                 </li>
-                <li class="nav-item">
-                    <button class="login_signup" routerLink="/profile" *ngIf="user">{{ user.first_name }}</button>
-                </li>
-                <li class="nav-item">
-                    <button class="login_signup red-linear-gradient text-white ml-3" (click)="logout()" *ngIf="user">Logout</button>
-                </li>
-                <li class="nav-item dropdown language" *ngIf="!user">
+                <li class="nav-item dropdown language">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <img src="assets/img/lnguage_icon.jpg">
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#"><img src="assets/img/lnguage_icon.jpg"></a>
-                        <a class="dropdown-item" href="#"><img src="assets/img/lnguage_icon.jpg"></a>
+                        <a class="dropdown-item" href="#"><img src="assets/img/lnguage_icon.jpg"> India</a>
                     </div>
                 </li>
             </ul>
+        </div>
+    </nav>
+
+    <nav class="navbar navbar-expand-xl navbar-light custom_header" *ngIf="user">
+        <a class="navbar-brand" routerLink="/home" *ngIf="user"><img src="assets/img/logo.png"></a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Collection of nav links, forms, and other content for toggling -->
+        <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
+           <!--  <div class="navbar-form form-inline">
+                <div class="input-group search-box">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Find project & hire talent" aria-label="Search">
+                    <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                </div>
+            </div> -->
+            <div class="navbar-nav ml-auto">
+                <a href="#" class="nav-item nav-link active">Free Credit</a>
+                <a href="#" class="nav-item nav-link">My Works</a>
+                <a href="#" class="nav-item nav-link login_signup">Post Project</a>
+                <!-- <a href="#" class="nav-item nav-link messages"><i class="fa fa-comments"></i><span class="badge">10</span></a> -->
+                <a href="#" class="nav-item nav-link notifications"><i class="fa fa-bell-o"></i><span class="badge">2</span></a>
+                <div class="nav-item dropdown">
+                    <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action">
+                        <img *ngIf="user.pic; else elseBlock" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg" class="avatar" alt="Avatar">
+                        <ng-template #elseBlock><img src="assets/img/profile/avatar.svg" class="avatar" alt="Avatar"></ng-template>
+                         {{ user.full_name }} 
+                        <b class="caret"></b>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a routerLink="/home" class="dropdown-item"><i class="fa fa-user-o"></i> Dashboard</a>
+                        <a routerLink="/profile" class="dropdown-item"><i class="fa fa-sliders"></i> Settings</a>
+                        <div class="dropdown-divider"></div>
+                        <a (click)="logout()" class="dropdown-item">Logout</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </nav>
 </section>
@@ -50,20 +79,6 @@
         <router-outlet></router-outlet>
     </div>
 </div>
-<ng-template #mymodal let-modal>
-  <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Bootstrap Modal</h4>
-    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-      <span aria-hidden="true">×</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    This is example from ItSolutionStuff.com
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
-  </div>
-</ng-template>
 <footer class="custome-footer d-none">
     <div class="container">
         <div class="space-top-1 space-bottom-1 space-bottom-lg-2">

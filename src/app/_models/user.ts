@@ -8,4 +8,5 @@
     last_name: string;
     dob: string;
     token: string;
+    pic: string;
 }

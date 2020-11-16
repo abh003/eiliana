@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://hh9el.hosts.cx/api'
+  apiUrl: 'https://pdt7h.hosts.cx/api'
 };
 
 /*

@@ -7,6 +7,7 @@ import { AccountService, AlertService } from '@app/_services';
 import { RegisterComponent } from './register.component';
 import { RegisterBasicComponent } from './register-basic.component';
 import { LoginComponent } from './login.component';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 @Component({
   templateUrl: 'registerotp.component.html',
@@ -16,6 +17,8 @@ export class RegisterotpComponent implements OnInit {
     loading = false;
     submitted = false;
     public reg_id;
+    public email_otp;
+    public mobile_otp;
     public userExists;
   	
   	constructor(
@@ -26,6 +29,8 @@ export class RegisterotpComponent implements OnInit {
         private alertService: AlertService
     ) { 
   		this.reg_id = localStorage.getItem("reg_id");
+      this.mobile_otp = localStorage.getItem("mobile_otp");
+      this.email_otp = localStorage.getItem("email_otp");
     }
 
   	
@@ -56,14 +61,33 @@ export class RegisterotpComponent implements OnInit {
                 this.userExists = response;
                 if (this.userExists.success == '0') {
                     this.alertService.error(this.userExists.errors);
+                    Swal.fire({
+                      icon: 'error',
+                      title: 'Oops...',
+                      text: this.userExists.errors,
+                      showConfirmButton: false,
+                      timer: 2000
+                    })
                     this.loading = false;
                 } else {
-                    this.alertService.success('Otp verify successful', { keepAfterRouteChange: true });
+                    this.alertService.success('OTP Verify Successful', { keepAfterRouteChange: true });
+                    Swal.fire({
+                      icon: 'success',
+                      title: 'Success...',
+                      text: 'Otp verify successful',
+                    })
                     // localStorage.setItem("reg_id", this.userExists.reg_id);
                     this.router.navigate(['../registerbasic'], { relativeTo: this.route });
                 }
             }, (data) => {
                 this.alertService.error('General error has occurred');
+                Swal.fire({
+                  icon: 'error',
+                  title: 'Oops...',
+                  text: 'Something went wrong!',
+                  showConfirmButton: false,
+                  timer: 2000
+                })
                 this.loading = false;
         });
     }

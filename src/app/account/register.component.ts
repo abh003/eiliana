@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
 import { AccountService, AlertService } from '@app/_services';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 @Component({ templateUrl: 'register.component.html' })
 export class RegisterComponent implements OnInit {
@@ -26,7 +27,7 @@ export class RegisterComponent implements OnInit {
     ngOnInit() {
         this.form = this.formBuilder.group({
             email: ['', [Validators.required, Validators.email]],
-            mobile: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
+            mobile: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{9}$")]],
             acceptTerms: [false, Validators.requiredTrue]
         });
     }
@@ -51,18 +52,46 @@ export class RegisterComponent implements OnInit {
                 this.userExists = response;
                 if (this.userExists.usersexist == '1') {
                     this.alertService.error(this.userExists.error);
+                    Swal.fire({
+                      icon: 'error',
+                      title: 'Oops...',
+                      text: this.userExists.error,
+                      showConfirmButton: false,
+                      timer: 2000
+                    })
                     this.loading = false;
                 } else if (this.userExists.usersexist == '2') {
                     this.alertService.error(this.userExists.error);
+                    Swal.fire({
+                      icon: 'error',
+                      title: 'Oops...',
+                      text: this.userExists.error,
+                      showConfirmButton: false,
+                      timer: 2000
+                    })
                     this.loading = false;
                 } else {
                     this.alertService.success('Otp send to your mobile and email successful', { keepAfterRouteChange: true });
                     // localStorage.removeItem('reg_id')
                     localStorage.setItem("reg_id", this.userExists.reg_id);
+                    localStorage.setItem("email_otp", this.userExists.email);
+                    localStorage.setItem("mobile_otp", this.userExists.mobile_number);
+                    Swal.fire({
+                      icon: 'success',
+                      title: 'Success...',
+                      text: 'Otp send to your mobile and email successful',
+                    })
                     this.router.navigate(['../registerotp'], { relativeTo: this.route });
                 }
             }, (data) => {
                 this.alertService.error('General error has occurred');
+                Swal.fire({
+                  icon: 'error',
+                  title: 'Oops...',
+                  text: 'Something went wrong!',
+                  showConfirmButton: false,
+                  timer: 2000
+                })
                 this.loading = false;
         });
     }

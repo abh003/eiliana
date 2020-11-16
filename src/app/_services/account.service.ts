@@ -12,6 +12,7 @@ export class AccountService {
     private userSubject: BehaviorSubject<User>;
     public user: Observable<User>;
     public userCheck;
+    public rootUrl;
 
     constructor(
         private router: Router,
@@ -74,6 +75,10 @@ export class AccountService {
         return this.http.post<User[]>(`${environment.apiUrl}/signup`, user).pipe(map(response => response));
     }
 
+    getAllCountry() {
+        return this.http.get(`${environment.apiUrl}/fetchcountry`).pipe(map(res => res));
+    }
+
     getAll() {
         return this.http.get<User[]>(`${environment.apiUrl}/users`);
     }
@@ -108,4 +113,63 @@ export class AccountService {
                 return x;
             }));
     }
+    
+    // profile settings
+
+    publicAnonymusUpdate(user_id,anonymous){
+        let url = `${environment.apiUrl}`+'/publicAnonymusUpdate';
+        if (user_id) {
+          url = url+'?user_id='+user_id;
+          url = url+'&anonymous='+anonymous;
+        }
+        return this.http.get(url).pipe(map(response => response));
+    }
+
+    updateProfile(params) {
+        return this.http.post<User>(`${environment.apiUrl}/updateProfile`, params)
+            .pipe(map(user => {
+                this.userCheck = user;
+                // store user details and jwt token in local storage to keep user logged in between page refreshes
+                if (this.userCheck.success == '1') {
+                    // update local storage
+                    const user = { ...this.userCheck.user, ...params };
+                    localStorage.setItem('user', JSON.stringify(user));
+
+                    // publish updated user to subscribers
+                    this.userSubject.next(user);
+                   return this.userCheck;
+                } else {
+                   return this.userCheck;
+                }
+            }));
+    }
+
+    getAllEducation(user_id){
+        let url = `${environment.apiUrl}`+'/getalleducation';
+        if (user_id) {
+          url = url+'?user_id='+user_id;
+        }
+        return this.http.get(url).pipe(map(response => response));
+    }
+
+    fetchEducationType() {
+        return this.http.get(`${environment.apiUrl}/fetchEducationType`).pipe(map(res => res));
+    }
+
+    registerEducation(education: any) {
+        return this.http.post<User[]>(`${environment.apiUrl}/registerEducation`, education).pipe(map(response => response));
+    }
+
+    getEducationById(id: string) {
+        let url = `${environment.apiUrl}`+'/getEducationById';
+        if (id) {
+          url = url+'?id='+id;
+        }
+        return this.http.get(url).pipe(map(response => response));
+    }
+
+    updateEducation(params: any) {
+        return this.http.post<User[]>(`${environment.apiUrl}/updateEducation`, params).pipe(map(response => response));
+    }
+
 }

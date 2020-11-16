@@ -6,6 +6,8 @@ import { first } from 'rxjs/operators';
 import { AccountService, AlertService } from '@app/_services';
 import { MustMatch } from '@app/_helpers';
 
+import Swal from 'sweetalert2/dist/sweetalert2.js';
+
 @Component({
   selector: 'app-login-first',
   templateUrl: './login-first.component.html',
@@ -57,17 +59,37 @@ export class LoginFirstComponent implements OnInit {
                 this.userCheck = response;
                 if (this.userCheck.success == '0') {
                     this.alertService.error(this.userCheck.error);
+                    Swal.fire({
+                      icon: 'error',
+                      title: 'Oops...',
+                      text: this.userCheck.error,
+                      showConfirmButton: false,
+                      timer: 2000
+                    })
                     this.loading = false;
                 } else {
                     // get return url from query parameters or default to home page
                     // localStorage.setItem('user', JSON.stringify(this.userCheck.user));
                     this.alertService.success('Password changed sucessfully!', { keepAfterRouteChange: true });
-                    localStorage.removeItem('reg_id')
-                    const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-                    this.router.navigateByUrl(returnUrl);
+                    Swal.fire({
+                      icon: 'success',
+                      title: 'Success...',
+                      text: 'Password changed sucessfully',
+                    })
+                    localStorage.removeItem('reg_id');
+                    this.router.navigate(['/profile'], { relativeTo: this.route });
+                    // const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+                    // this.router.navigateByUrl(returnUrl);
                 }
             }, (data) => {
                 this.alertService.error('General error has occurred');
+                Swal.fire({
+                  icon: 'error',
+                  title: 'Oops...',
+                  text: 'Something went wrong!',
+                  showConfirmButton: false,
+                  timer: 2000
+                })
                 this.loading = false;
         });
     }

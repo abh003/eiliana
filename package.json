@@ -29,6 +29,7 @@
         "rxjs": "^6.5.5",
         "save": "^2.4.0",
         "slick-carousel": "^1.8.1",
+        "sweetalert2": "^10.10.0",
         "tslib": "^2.0.0",
         "zone.js": "^0.10.3"
     },
